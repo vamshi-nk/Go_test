@@ -13,6 +13,7 @@ func TestShapes(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
+	t.Run("rectangles",func(t *testing.T){
 	rectangle := Rectangle{12.0, 6.0}
 	got := Area(rectangle)
 	want := 72.0
@@ -20,4 +21,16 @@ func TestArea(t *testing.T) {
 	if got != want {
 		t.Errorf("got %.2f want %.2f", got, want)
 	}
+	})
+
+	t.Run("circles",func(t *testing.T){
+		cirlce:= Circle{10}
+		got := cirlce.Area()
+		want := 314.1592653589793
+		
+		if got != want {
+			t.Errorf("got %g want %g",got, want)
+		}
+	})
+	
 }
